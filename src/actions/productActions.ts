@@ -3,12 +3,12 @@ import { Products } from "../interfaces/productInterface";
 export enum ProductTypes {
   GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS",
   GET_PRODUCT = "GET_PRODUCT",
-  ADD_PRODUCT = "ADD_PRODUCT",
-  UPDATE_PRODUCT = "UPDATE_PRODUCT",
-  DELETE_PRODUCT = "DELETE_PRODUCT",
+  GET_CATEGORIES = "GET_CATEGORIES",
+  GET_PRODUCTS_BY_CATEGORY = "GET_PRODUCTS_BY_CATEGORY",
+  SET_LOADING_PRODUCTS = "SET_LOADING_PRODUCTS",
 }
 
 export type ProductActions = {
   type: ProductTypes;
-  payload: Products[];
+  payload: Products[] | Products | boolean;
 };

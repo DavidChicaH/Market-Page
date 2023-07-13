@@ -1,5 +1,8 @@
 export interface Products {
   products: Product[];
+  categoryProducts: Product[];
+  categories: Category[];
+  loading?: boolean;
 }
 
 export interface Product {
@@ -7,12 +10,18 @@ export interface Product {
   title: string;
   price: number;
   description: string;
-  image?: string;
-  category: string;
+  image: string;
+  category: Category;
   rating: Rating;
 }
 
-interface Rating {
+export type Category =
+  | "electronics"
+  | "jewelery"
+  | "men's clothing"
+  | "women's clothing";
+
+export interface Rating {
   rate: number;
   count: number;
 }
