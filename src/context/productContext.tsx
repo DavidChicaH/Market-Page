@@ -6,14 +6,9 @@ import {
   productReducer,
 } from "../reducers/productReducer";
 import { ProductActions, ProductTypes } from "../actions/productActions";
+import { ImportMetaEnv } from "../interfaces/apiInterfaces";
 
 const ProductContext = createContext({});
-
-interface ImportMetaEnv {
-  VITE_PRODUCTS_URL: string;
-  VITE_CATEGORIES_URL: string;
-  VITE_CATEGORY_URL: string;
-}
 
 const productsAPI: ImportMetaEnv = import.meta.env.VITE_PRODUCTS_URL;
 const categoriesAPI: ImportMetaEnv = import.meta.env.VITE_CATEGORIES_URL;

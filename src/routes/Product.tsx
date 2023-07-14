@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductContext from "../context/productContext";
-import { TailSpin } from "react-loader-spinner";
+import Loader from "../components/Loader";
 
 const Product = () => {
   const { state, dispatch, getProducts, productsAPI } =
@@ -16,18 +16,7 @@ const Product = () => {
   return (
     <>
       {state.loading ? (
-        <div className="flex justify-center items-center h-screen">
-          <TailSpin
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="tail-spin-loading"
-            radius="1"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
-        </div>
+     <Loader/>
       ) : (
         <section className="pt-32 pb-12 lg:py-32 h-screen flex items-center">
           <div className="container mx-auto">
