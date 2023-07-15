@@ -10,6 +10,7 @@ import Product from "./routes/Product";
 import Cart from "./routes/Cart";
 import { ProductProvider } from "./context/productContext";
 import Categories from "./routes/Categories";
+import { CartProvider } from "./context/cartContext";
 
 function App() {
   const router = createBrowserRouter(
@@ -28,7 +29,9 @@ function App() {
   return (
     <>
       <ProductProvider>
-        <RouterProvider router={router} />
+        <CartProvider>
+          <RouterProvider router={router} />
+        </CartProvider>
       </ProductProvider>
     </>
   );

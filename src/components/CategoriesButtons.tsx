@@ -11,7 +11,7 @@ const CategoriesButtons = () => {
     getCategories(categoriesAPI, dispatch);
   }, []);
   return (
-    <div className="w-full flex justify-center items-center mt-4 gap-x-4">
+    <div className="w-full flex flex-col md:flex-row justify-center items-center mt-4 gap-4">
       {state.categories.map((category: Category[], index: number) => (
         <Link
           key={index}

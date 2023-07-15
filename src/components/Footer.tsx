@@ -1,4 +1,3 @@
-
 const Footer = () => {
   return (
     <footer className="bg-black py-12">
@@ -6,7 +5,7 @@ const Footer = () => {
         <p className="text-white text-center">Mi first E-commerce App :D</p>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -12,10 +12,10 @@ const Home = () => {
     getProducts(productsAPI, dispatch);
   }, []);
   return (
-    <div className="">
+    <div>
       <CategoriesButtons />
       {state.loading ? (
-       <Loader/>
+        <Loader />
       ) : (
         <ProductsList
           products={state.products}

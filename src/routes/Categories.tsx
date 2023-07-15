@@ -15,7 +15,7 @@ const Categories = () => {
     getProductsByCategory(`${categoryAPI}${category}`, dispatch);
   }, [category]);
   return (
-    <div>
+    <div className="min-h-screen">
       <CategoriesButtons />
       {state.loading ? (
         <Loader />

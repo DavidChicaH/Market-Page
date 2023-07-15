@@ -8,11 +8,11 @@ import {
 import { ProductActions, ProductTypes } from "../actions/productActions";
 import { ImportMetaEnv } from "../interfaces/apiInterfaces";
 
-const ProductContext = createContext({});
-
 const productsAPI: ImportMetaEnv = import.meta.env.VITE_PRODUCTS_URL;
 const categoriesAPI: ImportMetaEnv = import.meta.env.VITE_CATEGORIES_URL;
 const categoryAPI: ImportMetaEnv = import.meta.env.VITE_CATEGORY_URL;
+
+const ProductContext = createContext({});
 
 interface Props {
   children: ReactNode;

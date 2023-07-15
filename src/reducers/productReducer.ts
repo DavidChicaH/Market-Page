@@ -32,7 +32,7 @@ export const productReducer = (state: Products, action: ProductActions) => {
       return {
         ...state,
         loading: action.payload,
-      }
+      };
     }
     // case ProductTypes.GET_PRODUCT: {
     //   return;
