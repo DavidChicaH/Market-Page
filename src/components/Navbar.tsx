@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="container mx-auto py-4 px-8 border-b-2 w-full flex">
       <div className="flex flex-1">
         <a href="/" className="font-bold text-3xl">
-          Logo
+          My Market
         </a>
         <FaCartShopping />
       </div>
@@ -27,7 +27,7 @@ const Navbar = () => {
       <div
         className={`fixed top-16 ${
           sidebar ? "right-0" : "-right-full"
-        } h-full w-full md:max-w-[600px] bg-gray-500 z-20 px-4 transition-all duration-300`}
+        } h-full w-full md:max-w-[600px] border bg-white rounded-tl-md z-20 px-4 transition-all duration-300`}
       >
         <div className="flex justify-between py-6 border-b items-center">
           <h1 className="uppercase text-lg font-semibold">shopping cart (0)</h1>
