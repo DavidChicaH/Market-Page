@@ -6,11 +6,11 @@ import {
 } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./routes/Home";
-import Product from "./routes/Product";
 import Cart from "./routes/Cart";
 import { ProductProvider } from "./context/productContext";
 import Categories from "./routes/Categories";
 import { CartProvider } from "./context/cartContext";
+import ProductInfo from "./routes/Product";
 
 function App() {
   const router = createBrowserRouter(
@@ -18,7 +18,7 @@ function App() {
       <>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/products/:id" element={<Product />} />
+          <Route path="/products/:id" element={<ProductInfo />} />
           <Route path="/category/:category" element={<Categories />} />
           <Route path="/cart" element={<Cart />} />
         </Route>
@@ -28,11 +28,11 @@ function App() {
 
   return (
     <>
-      <ProductProvider>
-        <CartProvider>
+      <CartProvider>
+        <ProductProvider>
           <RouterProvider router={router} />
-        </CartProvider>
-      </ProductProvider>
+        </ProductProvider>
+      </CartProvider>
     </>
   );
 }

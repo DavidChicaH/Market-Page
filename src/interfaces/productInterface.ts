@@ -1,7 +1,6 @@
 export interface Products {
   products: Product[];
-  categoryProducts: Product[];
-  categories: Category[];
+  categories?: Category[];
   loading?: boolean;
 }
 

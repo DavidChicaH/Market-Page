@@ -1,22 +1,28 @@
-import { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { Params, useParams } from "react-router-dom";
 import ProductContext from "../context/productContext";
 import Loader from "../components/Loader";
+import { Product } from "../interfaces/productInterface";
+import CartContext from "../context/cartContext";
 
-const Product = () => {
-  const { state, dispatch, getProducts, productsAPI } =
-    useContext(ProductContext);
-  const { id } = useParams<{ id: string }>();
+const ProductInfo = () => {
+  const { productState } = useContext(ProductContext);
+  const { addToCart} = useContext(CartContext);
 
-  useEffect(() => {
-    getProducts(`${productsAPI}${id}`, dispatch);
-  }, []);
+  const { id }: Readonly<Params<string>> = useParams();
+  
 
-  const { title, price, description, image } = state.products;
+  const product = productState.products.find(
+    (item: Product) => item.id === parseInt(id)
+  );
+
+  if (!product) return <Loader />;
+
+  const { title, price, description, image } = product;
   return (
     <>
-      {state.loading ? (
-     <Loader/>
+      {productState.loading ? (
+        <Loader />
       ) : (
         <section className="pt-32 pb-12 lg:py-32 h-screen flex items-center">
           <div className="container mx-auto">
@@ -36,7 +42,7 @@ const Product = () => {
                   {price}
                 </div>
                 <p className="mb-8">{description}</p>
-                <button className="bg-black py-4 px-8 text-white">
+                <button onClick={() => addToCart(product, product.id)} className="bg-black py-4 px-8 text-white">
                   Add to cart
                 </button>
               </div>
@@ -48,4 +54,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductInfo;

@@ -1,31 +1,29 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import ProductCategoryList from "../components/ProductCategoryList";
 import ProductContext from "../context/productContext";
 import { useParams } from "react-router-dom";
 import CategoriesButtons from "../components/CategoriesButtons";
 import Loader from "../components/Loader";
+import { Product } from "../interfaces/productInterface";
 
 const Categories = () => {
-  const { state, dispatch, getProductsByCategory, categoryAPI } =
-    useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
 
   const { category } = useParams<{ category: string }>();
 
-  useEffect(() => {
-    getProductsByCategory(`${categoryAPI}${category}`, dispatch);
-  }, [category]);
+  const productsByCategory = productState.products.filter(
+    (product: Product) => product.category === category
+  );
+
+  console.log(productsByCategory);
   return (
     <div className="min-h-screen">
       <CategoriesButtons />
-      {state.loading ? (
+      {productState.loading ? (
         <Loader />
       ) : (
         <>
-          <ProductCategoryList
-            products={state.products}
-            categoryProducts={state.categoryProducts}
-            categories={state.categories}
-          />
+          <ProductCategoryList products={productsByCategory} />
         </>
       )}
     </div>
