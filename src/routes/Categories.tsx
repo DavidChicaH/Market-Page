@@ -15,7 +15,6 @@ const Categories = () => {
     (product: Product) => product.category === category
   );
 
-  console.log(productsByCategory);
   return (
     <div className="min-h-screen">
       <CategoriesButtons />

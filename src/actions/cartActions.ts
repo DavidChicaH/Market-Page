@@ -11,5 +11,5 @@ export enum CartTypes {
 
 export type CartActions = {
   type: CartTypes;
-  payload: CartItem | Product[];
+  payload?: CartItem | Product[];
 };

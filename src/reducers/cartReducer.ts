@@ -14,13 +14,21 @@ export const cartReducer = (cartState: Cart, cartAction: CartActions) => {
       };
     }
     case CartTypes.REMOVE_ONE_FROM_CART: {
-      return {};
+      return {
+        ...cartState,
+        cart: cartAction.payload,
+      };
     }
     case CartTypes.REMOVE_ALL_FROM_CART: {
-      return {};
+      return {
+        ...cartState,
+        cart: cartAction.payload,
+      };
     }
     case CartTypes.CLEAR_CART: {
-      return {};
+      return {
+        cart: []
+      };
     }
     default: {
       return cartState;
