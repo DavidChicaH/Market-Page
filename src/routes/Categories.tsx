@@ -18,6 +18,7 @@ const Categories = () => {
   return (
     <div className="min-h-screen">
       <CategoriesButtons />
+      <h2 className="capitalize text-center mt-12 text-3xl text-secondary">{category}</h2>
       {productState.loading ? (
         <Loader />
       ) : (

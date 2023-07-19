@@ -14,7 +14,7 @@ const CategoriesButtons = () => {
         <Link
           key={index}
           to={`/category/${category}`}
-          className="bg-red-200 py-3 px-4 font-bold rounded-md"
+          className="bg-primary-light hover:bg-primary text-secondary hover:text-font transition-all duration-500 py-3 px-4 font-medium capitalize rounded-md"
         >
           {category}
         </Link>

@@ -14,7 +14,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCart } = useContext(CartContext);
   return (
     <div>
-      <div className="border border-gray-400 rounded-sm h-[300px] mb-4 relative overflow-hidden group transition">
+      <div className="border border-font rounded-sm h-[300px] mb-4 relative overflow-hidden group transition">
         <div className="w-full h-full flex justify-center items-center">
           <div className="w-[200px] mx-auto flex justify-center items-center">
             <img
@@ -28,7 +28,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <button>
             <div
               onClick={() => addToCart(product, product.id)}
-              className="flex justify-center items-center text-white w-12 h-12 bg-red-500"
+              className="flex justify-center items-center text-white w-12 h-12 bg-primary-light hover:bg-primary transition-colors duration-300 rounded-full"
             >
               <FaPlus className="text-3xl" />
             </div>
@@ -42,16 +42,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </div>
       <div>
-        <div className="text-sm capitalize text-gray-500">
+        <div className="text-sm capitalize text-secondary">
           {product.category}
         </div>
         <Link to={`/products/${product.id}`}>
-          <h2 className="font-semibold mb-1">{product.title}</h2>
+          <h2 className="font-semibold mb-1 text-font">{product.title}</h2>
         </Link>
-        <div className="flex">
+        <div className="flex py-1.5">
           <RatingStars rate={product.rating.rate} />
         </div>
-        <h2 className="font-semibold">$ {product.price}</h2>
+        <h2 className="font-semibold text-font">$ {product.price}</h2>
       </div>
     </div>
   );

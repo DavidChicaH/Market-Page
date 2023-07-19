@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { FaCartShopping, FaTrashCan } from "react-icons/fa6";
+import { FaCartShopping } from "react-icons/fa6";
 import { CgClose } from "react-icons/cg";
 import CartContext from "../context/cartContext";
 import { Link } from "react-router-dom";
@@ -19,12 +19,13 @@ const Navbar = () => {
   return (
     <nav className="container mx-auto py-4 px-8 border-b-2 w-full flex">
       <div className="flex flex-1">
-        <Link to="/" className="font-bold text-3xl">
+        <Link to="/" className="font-bold text-3xl text-primary">
           My Market
         </Link>
-        <FaCartShopping />
+
+        <FaCartShopping className="text-secondary"/>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center text-secondary">
         <FaCartShopping
           className="cursor-pointer text-3xl"
           onClick={toggleSideBar}
