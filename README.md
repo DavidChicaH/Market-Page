@@ -61,3 +61,4 @@ npm run dev
 ## Project preview 📷:
 
 ![HomePage](https://github.com/DavidChicaH/Projects-Media/blob/main/Screenshot%202023-07-21%20111637.png?raw=true)
+![ProductInfo](https://share.eu.internxt.com/sh/file/07bbad9bcec5306daa96/7a7ed8be43df864fe3ceb68d5b568ad9ad3bf45a00e71cbe4335432ee71872f5)
