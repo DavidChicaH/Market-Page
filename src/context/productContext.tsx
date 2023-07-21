@@ -18,6 +18,7 @@ interface Props {
 }
 
 const ProductProvider = ({ children }: Props) => {
+  
   const [productState, productDispatch] = useReducer(
     productReducer,
     productInitialState

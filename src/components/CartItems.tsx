@@ -4,6 +4,7 @@ import { CartItem } from "../interfaces/cartInterfaces";
 import CartContext from "../context/cartContext";
 import ProductContext from "../context/productContext";
 
+
 const CartItems = () => {
   const {
     cartState,
@@ -11,9 +12,9 @@ const CartItems = () => {
     clearCart,
     deleteOneFromItem,
     deleteItemFromCart,
-  } = useContext(CartContext);
+  }: any = useContext(CartContext);
 
-  const { productState } = useContext(ProductContext);
+  const { productState }: any = useContext(ProductContext);
 
   const { products } = productState;
   const { cart } = cartState;

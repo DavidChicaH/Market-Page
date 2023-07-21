@@ -1,3 +1,4 @@
+import { Reducer } from "react";
 import { ProductActions, ProductTypes } from "../actions/productActions";
 import { Products } from "../interfaces/productInterface";
 
@@ -7,7 +8,7 @@ export const productInitialState: Products = {
   loading: false,
 };
 
-export const productReducer = (state: Products, action: ProductActions) => {
+export const productReducer: Reducer<Products, ProductActions> = (state, action) => {
   switch (action.type) {
     case ProductTypes.GET_ALL_PRODUCTS: {
       return {

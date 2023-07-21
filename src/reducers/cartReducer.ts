@@ -1,11 +1,15 @@
+import { Reducer } from "react";
 import { CartActions, CartTypes } from "../actions/cartActions";
-import { Cart, CartItem } from "../interfaces/cartInterfaces";
+import { Cart } from "../interfaces/cartInterfaces";
 
 export const cartInitialState: Cart = {
   cart: [],
 };
 
-export const cartReducer = (cartState: Cart, cartAction: CartActions) => {
+export const cartReducer: Reducer<Cart, CartActions> = (
+  cartState: Cart,
+  cartAction: CartActions
+) => {
   switch (cartAction.type) {
     case CartTypes.ADD_TO_CART: {
       return {
@@ -27,7 +31,7 @@ export const cartReducer = (cartState: Cart, cartAction: CartActions) => {
     }
     case CartTypes.CLEAR_CART: {
       return {
-        cart: []
+        cart: [],
       };
     }
     default: {
