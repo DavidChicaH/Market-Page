@@ -8,7 +8,7 @@ export const productInitialState: Products = {
   loading: false,
 };
 
-export const productReducer: Reducer<Products, ProductActions> = (state, action) => {
+export const productReducer: Reducer<any, ProductActions> = (state, action) => {
   switch (action.type) {
     case ProductTypes.GET_ALL_PRODUCTS: {
       return {

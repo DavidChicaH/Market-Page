@@ -6,7 +6,8 @@ export const cartInitialState: Cart = {
   cart: [],
 };
 
-export const cartReducer: Reducer<Cart, CartActions> = (
+//any type needs to be corrected
+export const cartReducer: Reducer<any, CartActions> = (
   cartState: Cart,
   cartAction: CartActions
 ) => {
