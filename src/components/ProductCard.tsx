@@ -11,7 +11,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } : any = useContext(CartContext);
   return (
     <div>
       <div className="border border-font rounded-sm h-[300px] mb-4 relative overflow-hidden group transition">

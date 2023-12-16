@@ -5,7 +5,7 @@ import ProductContext from "../context/productContext";
 import Loader from "../components/Loader";
 
 const Home = () => {
-  const { productState } = useContext(ProductContext);
+  const { productState } : any = useContext(ProductContext);
 
   return (
     <div>

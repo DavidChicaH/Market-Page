@@ -6,19 +6,20 @@ import { Product } from "../interfaces/productInterface";
 import CartContext from "../context/cartContext";
 
 const ProductInfo = () => {
-  const { productState } = useContext(ProductContext);
-  const { addToCart} = useContext(CartContext);
+  const { productState } : any = useContext(ProductContext);
+  const { addToCart} : any = useContext(CartContext);
 
   const { id }: Readonly<Params<string>> = useParams();
   
 
-  const product = productState.products.find(
-    (item: Product) => item.id === parseInt(id)
+  const product : Product = productState.products.find(
+    //@ts-ignore
+    (item : Product) => item.id === parseInt(id)
   );
 
   if (!product) return <Loader />;
 
-  const { title, price, description, image } = product;
+  const { title, price, description, image }  = product;
   return (
     <>
       {productState.loading ? (

@@ -8,7 +8,7 @@ import CartItems from "./CartItems";
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
 
-  const { cartState } = useContext(CartContext);
+  const { cartState  } : any = useContext(CartContext);
 
   const { cart } = cartState;
 
